@@ -12,7 +12,7 @@
 
 ## Description
 
-_This C# web app is designed to catalog vendors and their associated orders for Pierre's bakery. This application allows the user to add vendors and generate order information including _
+This C# web app is designed to catalog vendors and their associated orders for Pierre's bakery. This application allows the user to add vendors and generate order information including a description, price, and order date.
 
 ## Setup/Installation Requirements
 
