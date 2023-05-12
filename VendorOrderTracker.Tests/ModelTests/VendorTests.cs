@@ -16,7 +16,7 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+    public void GetVendorName_ReturnsName_String()
     {
       //Arrange
       string vendorName = "Suzie's Cafe";
@@ -29,6 +29,18 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(vendorName, result);
     }
 
-
+    [TestMethod]
+    public void SetName_SetsVendorName_String()
+    {
+      //Arrange
+      string title = "Suzie's Cafe";
+      Vendor newVendor = new Vendor(title);
+      //Act
+      string updatedVendorName = "Suzie's Pastries";
+      newVendor.VendorName = updatedVendorName;
+      string result = newVendor.VendorName;
+      //Assert
+      Assert.AreEqual(updatedVendorName, result);
+    }
   }
 }
