@@ -12,7 +12,7 @@ namespace VendorOrderTracker.Tests
     {
       Order.ClearAll();
     }
-    
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -115,8 +115,12 @@ namespace VendorOrderTracker.Tests
       //Arrange
       string title01 = "12 croissants";
       string title02 = "4 cookies";
-      Order newOrder1 = new Order(title01, 60, "2023-06-24");
-      Order newOrder2 = new Order(title02, 8, "2023-05-12");
+      int price01 = 12;
+      int price02 = 23;
+      string date01 = "2023-05-12";
+      string date02 = "2023-03-22";
+      Order newOrder1 = new Order(title01, price01, date01);
+      Order newOrder2 = new Order(title02, price02, date02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -138,6 +142,24 @@ namespace VendorOrderTracker.Tests
       int result = newOrder.Id;
       //Assert
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string title01 = "12 croissants";
+      string title02 = "4 cookies";
+      int price01 = 12;
+      int price02 = 23;
+      string date01 = "2023-05-12";
+      string date02 = "2023-03-22";
+      Order newOrder1 = new Order(title01, price01, date01);
+      Order newOrder2 = new Order(title02, price02, date02);
+      //Act
+      Order result = Order.Find(2);
+      //Assert
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
