@@ -2,8 +2,9 @@
   Layout = "_Layout";
 }
 
-<form action="/orders" method="post">
+<form action="/vendors/@Model.Id/orders" method="post">
   <label for="title">Order Title:</label>
+  <input id="vendorId" name="vendorId", type="hidden" value="@Model.Id">
   <input id="title" name="title" type="text" required>
   <label for="price">Cost: ($)</label>
   <input id="price" name="price" type="number">     

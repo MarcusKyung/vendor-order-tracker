@@ -6,31 +6,31 @@ namespace VendorOrderTracker.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/orders")]
-    public ActionResult Index()
+    // [HttpGet("/orders")]
+    // public ActionResult Index()
+    // {
+    //   List<Order> allOrders = Order.GetAll();
+    //   return View(allOrders);
+    // }
+
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorID)
     {
-      List<Order> allOrders = Order.GetAll();
-      return View(allOrders);
+      Vendor vendor = Vendor.Find(vendorID);
+      return View(vendor);
     }
 
-    [HttpGet("/orders/new")]
-    public ActionResult New()
-    {
-      return View();
-    }
 
-    [HttpPost("/orders")]
-    public ActionResult Create(string title, int price, string date)
-    {
-      Order myOrder = new Order(title, price, date);
-      return RedirectToAction("Index");
-    }
 
-    [HttpGet("/orders/{id}")]
-    public ActionResult Show(int id)
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      Order foundOrder = Order.Find(id);
-      return View(foundOrder);
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
   }
 }

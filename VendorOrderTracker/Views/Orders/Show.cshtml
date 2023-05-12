@@ -5,10 +5,10 @@
     <h1>OrderDetails:</h1>
 @using VendorOrderTracker.Models
     <ul>
-      <li><b>Order Title:</b> $@Model.Title</li>
-      <li><b>Order Price:</b> $@Model.Price</li>
-      <li><b>Order Date:</b> @Model.Date</li>                  
+      <li><b>Order Title:</b> @Model["order"].Title</li>
+      <li><b>Order Price:</b> @Model["order"].Price</li>
+      <li><b>Order Date:</b> @Model["order"].Date</li>                  
     </ul><br>
 
-    <a href='/orders/new'>Add another Order</a><br>
-    <a href='/orders'>View all Orders</a>
+<a href='/vendors/@Model["vendors"].Id/orders/new'>Add another item</a>
+<a href='/vendors'>View all vendors</a>
