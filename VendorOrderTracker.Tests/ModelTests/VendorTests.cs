@@ -63,8 +63,8 @@ namespace VendorOrderTracker.Tests
     public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
       //Arrange
-      string vendorName01 = "12 croissants";
-      string vendorName02 = "4 cookies";
+      string vendorName01 = "Suzie's Cafe";
+      string vendorName02 = "Suzie's Bakery";
       Vendor newVendor1 = new Vendor(vendorName01);
       Vendor newVendor2 = new Vendor(vendorName02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
@@ -73,5 +73,22 @@ namespace VendorOrderTracker.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+        
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      //Arrange
+      string vendorName01 = "Suzie's Cafe";
+      string vendorName02 = "Suzie's Bakery";
+      Vendor newVendor1 = new Vendor(vendorName01);
+      Vendor newVendor2 = new Vendor(vendorName02);
+
+      //Act
+      Vendor result = Vendor.Find(2);
+
+      //Assert
+      Assert.AreEqual(newVendor2, result);
+    }
+    
   }
 }
