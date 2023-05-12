@@ -4,8 +4,11 @@ namespace VendorOrderTracker.Models
 {
   public class Vendor
   {
-    public Vendor()
+    public string VendorName { get; }
+
+    public Vendor(string vendorName)
     {
+      VendorName = vendorName;
     }
   }
 }
