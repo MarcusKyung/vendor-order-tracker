@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+<form action="/items" method="post">
+  <label for="title">Order Title:</label>
+  <input id="title" name="title" type="text" required>
+  <label for="price">Cost: ($)</label>
+  <input id="price" name="price" type="number">     
+  <label for="date">Date:</label>
+  <input id="date" name="date" type="date" value="2023-05-12" min="1900-01-01">    
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
