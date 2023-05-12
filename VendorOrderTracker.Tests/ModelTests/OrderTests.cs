@@ -12,6 +12,7 @@ namespace VendorOrderTracker.Tests
     {
       Order.ClearAll();
     }
+    
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -109,7 +110,7 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsItems_OrderList()
+    public void GetAll_ReturnsOrders_OrderList()
     {
       //Arrange
       string title01 = "12 croissants";
@@ -123,6 +124,20 @@ namespace VendorOrderTracker.Tests
 
       //Assert
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string title = "walk the dog.";
+      int price = 12;
+      string date = "2023-05-12";
+      Order newOrder = new Order(title, price, date);
+      //Act
+      int result = newOrder.Id;
+      //Assert
+      Assert.AreEqual(1, result);
     }
   }
 }
