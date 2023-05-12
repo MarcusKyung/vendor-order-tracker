@@ -10,6 +10,5 @@ namespace VendorOrderTracker.Controllers
       {
         return View();
       }
-
     }
 }

@@ -20,12 +20,12 @@ _This C# web app is designed to catalog vendors and their associated orders for 
 2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "VendorOrderTracker". 
 3. Run `dotnet run` in the command line to run the console app. Since this is a web application, you'll interact with it through your browser.
 4. Optionally, you can run `dotnet build` to compile this web app without running it.
-5. From the homepage add vendors to . 
-6. To run MSTests on business logic methods navigate to the `PierresBakery.Tests` directory using your device's terminal. Run the `dotnet test` command to view test results. 
+5. From the homepage add vendors to the list of vendors. Add individual orders to each vendor by clicking the link on each to access the form. 
+6. To run MSTests on business logic methods navigate to the `VendorOrderTracker.Tests` directory using your device's terminal. Run the `dotnet test` command to view test results. 
 
 ## Known Bugs
 
-* _No known bugs as of 5/7/2023_
+* _Styling removed due to time constraint._
 
 ## License
 
