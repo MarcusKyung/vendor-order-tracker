@@ -6,8 +6,12 @@ using System;
 namespace VendorOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -52,7 +56,8 @@ namespace VendorOrderTracker.Tests
       //Assert
       Assert.AreEqual(price, result);
     }
-
+    
+    [TestMethod]
     public void SetOrderPrice_SetsOrderPrice_Int()
     {
       //Arrange
@@ -78,6 +83,7 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(date, result);
     }
 
+    [TestMethod]
     public void SetOrderDate_SetsOrderDate_String()
     {
       //Arrange
@@ -89,6 +95,34 @@ namespace VendorOrderTracker.Tests
       string result = newOrder.Date;
       //Assert
       Assert.AreEqual(updatedDate, result);
+    }
+    
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      // Arrange
+      List<Order> newList = new List<Order> { };
+      // Act
+      List<Order> result = Order.GetAll();
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsItems_OrderList()
+    {
+      //Arrange
+      string title01 = "12 croissants";
+      string title02 = "4 cookies";
+      Order newOrder1 = new Order(title01, 60, "2023-06-24");
+      Order newOrder2 = new Order(title02, 8, "2023-05-12");
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
