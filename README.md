@@ -2,25 +2,25 @@
 
 #### By _**Marcus Kyung**_
 
-#### _This C# web application is designed to track vendor and order information for Pierres Bakery._
+#### _This C# web application is designed to track vendor and order information for Pierre's Bakery._
 
 ## Technologies Used
 
 * _C#/.NET Version 6.0.402_
 * _MSTest_
-* _ASP.NET MVC_
+* _ASP.NET MVC Framework_
 
 ## Description
 
-_This basic C# console app calculates the user's total order price based on the following prices/discounts at Pierre's Bakery: 1 loaf of bread is $5 and every 3rd loaf is free, 1 pastry is $2 and every 4th loaf is free. The application allows a user to input their desired number of loaves of bread and pasteries then calculates and returns a total order price._
+_This C# web app is designed to catalog vendors and their associated orders for Pierre's bakery. This application allows the user to add vendors and generate order information including _
 
 ## Setup/Installation Requirements
 
 1. Clone this repo from GH to your local machine.
-2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "PierresBakery". 
-3. Run `dotnet run` in the command line to run the console app. Since this is a console application, you'll interact with it through text commands in your terminal.
-4. Optionally, you can run `dotnet build` to compile this console app without running it.
-5. When prompted, enter your response's to Pierre's questions to place your order and press `enter`. Your total bread and pastry price will be outputted to your console. 
+2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "VendorOrderTracker". 
+3. Run `dotnet run` in the command line to run the console app. Since this is a web application, you'll interact with it through your browser.
+4. Optionally, you can run `dotnet build` to compile this web app without running it.
+5. From the homepage add vendors to . 
 6. To run MSTests on business logic methods navigate to the `PierresBakery.Tests` directory using your device's terminal. Run the `dotnet test` command to view test results. 
 
 ## Known Bugs
