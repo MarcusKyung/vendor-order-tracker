@@ -11,7 +11,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("10 croissants");
+      Order newOrder = new Order("10 croissants", 12);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -21,7 +21,7 @@ namespace VendorOrderTracker.Tests
       //Arrange
       string title = "10 croissants";
       //Act
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, 12);
       string result = newOrder.Title;
       //Assert
       Assert.AreEqual(title, result);
@@ -32,13 +32,25 @@ namespace VendorOrderTracker.Tests
     {
       //Arrange
       string title = "10 croissants";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, 12);
       //Act
       string updatedTitle = "10 Pastries";
       newOrder.Title = updatedTitle;
       string result = newOrder.Title;
       //Assert
       Assert.AreEqual(updatedTitle, result);
+    }
+
+    [TestMethod]
+    public void GetOrderPrice_ReturnsOrderPrice_Int()
+    {
+      //Arrange
+      int price = 12;
+      //Act
+      Order newOrder = new Order("10 croissants", price);
+      int result = newOrder.Price;
+      //Assert
+      Assert.AreEqual(price, result);
     }
   }
 }

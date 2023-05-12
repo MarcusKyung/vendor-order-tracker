@@ -5,9 +5,11 @@ namespace VendorOrderTracker.Models
   public class Order
   {
     public string Title { get; set; }
-    public Order(string title)
+    public int Price { get; }
+    public Order(string title, int price)
     {
       Title = title;
+      Price = price;
     }
   }
 }
